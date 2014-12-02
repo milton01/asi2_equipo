@@ -30,6 +30,7 @@ class Welcome extends CI_Controller {
 		$crud = new grocery_CRUD();
  
         $crud->set_table('marca');
+        $crud->unset_jquery();
         $output = $crud->render();
  
         //$this->load->view('welcome_message');

@@ -11,13 +11,10 @@
         </title>
         <link href="<?=base_url()?>/css/style.default.css" rel="stylesheet">
         <link href="<?=base_url()?>/css/jquery.datatables.css" rel="stylesheet">
-        <?php 
-foreach($css_files as $file): ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-<?php endforeach; ?>
-<?php foreach($js_files as $file): ?>
-    <script src="<?php echo $file; ?>"></script>
-<?php endforeach; ?>
+        <?php
+        foreach($css_files as $file): ?>
+        <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+        <?php endforeach; ?>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js">
@@ -39,7 +36,7 @@ foreach($css_files as $file): ?>
             <div class="leftpanel">
                 
                 <div class="logopanel">
-                    <img src="/images/logo.png"/>
+                    <img src="<?=base_url()?>images/logo.png"/>
                 </div>
                 <!-- logopanel -->
                 
@@ -48,7 +45,7 @@ foreach($css_files as $file): ?>
                     <!-- This is only visible to small devices -->
                     <div class="visible-xs hidden-sm hidden-md hidden-lg">
                         <div class="media userlogged">
-                            <img alt="" src="images/photos/loggeduser.png" class="media-object">
+                            <img alt="" src="<?=base_url()?>images/photos/loggeduser.png" class="media-object">
                             <div class="media-body">
                                 <h4>
                                 José López
@@ -179,7 +176,7 @@ foreach($css_files as $file): ?>
                             <li>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <img src="images/photos/loggeduser.png" alt="" />
+                                    <img src="<?=base_url()?>images/photos/loggeduser.png" alt="" />
                                     José López
                                     <span class="caret">
                                     </span>
@@ -240,28 +237,33 @@ foreach($css_files as $file): ?>
             
             
         </section>
-        <script src="<?=base_url()?>/js/jquery-1.10.2.min.js">
+        <script src="<?=base_url()?>js/jquery-1.10.2.min.js">
         </script>
-        <script src="<?=base_url()?>/js/jquery-migrate-1.2.1.min.js">
+        <script src="<?=base_url()?>js/jquery-migrate-1.2.1.min.js">
         </script>
-        <script src="<?=base_url()?>/js/bootstrap.min.js">
+        <script src="<?=base_url()?>js/bootstrap.min.js">
         </script>
-        <script src="<?=base_url()?>/js/modernizr.min.js">
+        <script src="<?=base_url()?>js/modernizr.min.js">
         </script>
-        <script src="j<?=base_url()?>/s/jquery.sparkline.min.js">
+        <script src="<?=base_url()?>js/jquery.sparkline.min.js">
         </script>
-        <script src="<?=base_url()?>/js/toggles.min.js">
+        <script src="<?=base_url()?>js/toggles.min.js">
         </script>
-        <script src="<?=base_url()?>/js/retina.min.js">
+        <script src="<?=base_url()?>js/retina.min.js">
         </script>
-        <script src="<?=base_url()?>/js/jquery.cookies.js">
+        <script src="<?=base_url()?>js/jquery.cookies.js">
         </script>
-        <script src="<?=base_url()?>/js/jquery.datatables.min.js">
+        <script src="<?=base_url()?>js/jquery.datatables.min.js">
         </script>
-        <script src="<?=base_url()?>/js/chosen.jquery.min.js">
+        <script src="<?=base_url()?>js/chosen.jquery.min.js">
         </script>
-        <script src="<?=base_url()?>/js/custom.js">
+        <script src="<?=base_url()?>js/custom.js">
         </script>
+        <!-- Grocery CRUD JS -->
+        <?php foreach($js_files as $file): ?>
+        <script src="<?php echo $file; ?>"></script>
+        <?php endforeach; ?>
+        <!-- Custom js-->
         <?=$scripts?>
     </body>
 </html>

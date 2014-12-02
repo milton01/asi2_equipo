@@ -11,9 +11,13 @@
         </title>
         <link href="<?=base_url()?>/css/style.default.css" rel="stylesheet">
         <link href="<?=base_url()?>/css/jquery.datatables.css" rel="stylesheet">
-        <?php
-        foreach($css_files as $file): ?>
-        <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+        <?php 
+            foreach($css_files as $file): ?>
+            <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+        <?php endforeach; ?>
+        <?php 
+            foreach($js_files as $file): ?>
+            <script src="<?php echo $file; ?>"></script>
         <?php endforeach; ?>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -36,7 +40,7 @@
             <div class="leftpanel">
                 
                 <div class="logopanel">
-                    <img src="<?=base_url()?>images/logo.png"/>
+                    <img src="images/logo.png"/>
                 </div>
                 <!-- logopanel --> 
                 
@@ -59,22 +63,20 @@
                             </a>
                         </li>
                         <li>
-                            <a href="usuarios.html">
-                                <i class="fa fa-user">
+                            <a href="clientes.html">
+                                <i class="fa fa-suitcase">
                                 </i>
-                                
                                 <span>
-                                Confirmacion de clientes
+                                Agregar pedidos
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="transportes.html">
-                                <i class="fa fa-truck">
+                            <a href="clientes.html">
+                                <i class="fa fa-suitcase">
                                 </i>
-                                
                                 <span>
-                                Carrito de compras
+                                Agregar cliente
                                 </span>
                             </a>
                         </li>
@@ -86,51 +88,6 @@
                                 Ver pedidos
                                 </span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="clientes.html">
-                                <i class="fa fa-suitcase">
-                                </i>
-                                <span>
-                                Registrar compras
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="clientes.html">
-                                <i class="fa fa-suitcase">
-                                </i>
-                                <span>
-                                Liquidacion de rutas
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Llenar transporte
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Agregar pedidos a la ruta
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Facturación de pedidos
-                                    </a>
-                                </li>
-                               
-                            </ul>
                         </li>
                         <li class="nav-parent">
                             <a href="tables.html">
@@ -173,20 +130,6 @@
                                     <a href="#.html">
                                         <i class="fa fa-caret-right">
                                         </i>
-                                        Ventas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Compras
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
                                         Inventario
                                     </a>
                                 </li>
@@ -197,33 +140,6 @@
                                         Productos escasos
                                     </a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Estado crediticio
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Creditos otorgados
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Facturas pendientes
-                                    </a>
-                                </li>
-                               
                             </ul>
                         </li>
                         <li class="nav-parent">
@@ -294,7 +210,7 @@
                             <li>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <img alt="" src="<?=base_url()?>images/photos/loggeduser.png" class="media-object">
+                                    <img src="images/photos/loggeduser.png" alt="" />
                                    
                                     José López
                                     <span class="caret">
@@ -349,33 +265,28 @@
             
             
         </section>
-        <script src="<?=base_url()?>js/jquery-1.10.2.min.js">
+        <script src="<?=base_url()?>/js/jquery-1.10.2.min.js">
         </script>
-        <script src="<?=base_url()?>js/jquery-migrate-1.2.1.min.js">
+        <script src="<?=base_url()?>/js/jquery-migrate-1.2.1.min.js">
         </script>
-        <script src="<?=base_url()?>js/bootstrap.min.js">
+        <script src="<?=base_url()?>/js/bootstrap.min.js">
         </script>
-        <script src="<?=base_url()?>js/modernizr.min.js">
+        <script src="<?=base_url()?>/js/modernizr.min.js">
         </script>
-        <script src="<?=base_url()?>js/jquery.sparkline.min.js">
+        <script src="j<?=base_url()?>/s/jquery.sparkline.min.js">
         </script>
-        <script src="<?=base_url()?>js/toggles.min.js">
+        <script src="<?=base_url()?>/js/toggles.min.js">
         </script>
-        <script src="<?=base_url()?>js/retina.min.js">
+        <script src="<?=base_url()?>/js/retina.min.js">
         </script>
-        <script src="<?=base_url()?>js/jquery.cookies.js">
+        <script src="<?=base_url()?>/js/jquery.cookies.js">
         </script>
-        <script src="<?=base_url()?>js/jquery.datatables.min.js">
+        <script src="<?=base_url()?>/js/jquery.datatables.min.js">
         </script>
-        <script src="<?=base_url()?>js/chosen.jquery.min.js">
+        <script src="<?=base_url()?>/js/chosen.jquery.min.js">
         </script>
-        <script src="<?=base_url()?>js/custom.js">
+        <script src="<?=base_url()?>/js/custom.js">
         </script>
-        <!-- Grocery CRUD JS -->
-        <?php foreach($js_files as $file): ?>
-        <script src="<?php echo $file; ?>"></script>
-        <?php endforeach; ?>
-        <!-- Custom js-->
         <?=$scripts?>
     </body>
 </html>

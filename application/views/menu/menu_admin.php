@@ -241,10 +241,8 @@
                             </a>
                             <ul class="children">
                                 <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Registro de cliente
+                                    <a href="#">
+                                        <?php echo anchor('welcome/estatus_cliente','Registro de cliente');?>
                                     </a>
                                 </li>
                                 <li>

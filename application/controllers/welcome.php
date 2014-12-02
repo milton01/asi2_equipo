@@ -49,7 +49,7 @@ class Welcome extends CI_Controller {
 	{
 		$crud = new grocery_CRUD();
  
-        $crud->set_table('marca');
+        $crud->set_table('estatus');
         $crud->unset_jquery();
         $output = $crud->render();
  
@@ -61,19 +61,36 @@ class Welcome extends CI_Controller {
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            
 	}
-
-
-	public function estatus2()
+        
+        public function estatus_cliente()
 	{
 		$crud = new grocery_CRUD();
  
         $crud->set_table('cliente');
+        $crud->unset_jquery();
         $output = $crud->render();
  
         //$this->load->view('welcome_message');
 		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Prueba');
-        $this->template->write('header', 'Formulario ingreso');
+		$this->template->write('title', 'Cliente');
+        $this->template->write('header', 'Formulario ingreso de cliente');
+        $this->template->write_view('content', 'test/primera', $output);
+        $this->template->write_view('scripts', 'master-scripts', $data );
+        $this->template->render();            
+	}
+
+
+	public function registro_empleado()
+	{
+		$crud = new grocery_CRUD();
+ 
+        $crud->set_table('empleado');
+        $output = $crud->render();
+ 
+        //$this->load->view('welcome_message');
+		$data['files'] = array('j1', 'j2', 'j3');
+		$this->template->write('title', 'Empleado');
+        $this->template->write('header', 'Formulario Empleado');
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            

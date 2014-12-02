@@ -56,7 +56,7 @@ $template['active_template'] = 'default';
 |--------------------------------------------------------------------------
 */
 
-$template['default']['template'] = 'login';
+$template['default']['template'] = 'master-layout';
 $template['default']['regions'] = array(
 	'title',
 	'header',

@@ -1,29 +1,49 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-            $this->load->view('login');	
-
-         
     
-	}
+    public function __construct() 
+    {        
+        parent::__construct();
+        $this->load->model('Login_Model');
+        $this->load->library(array( 'form_validation'));
+        $this->load->helper('text');
+    }
+
+	public function index()
+	{       
+    if ($this->input->post('username') and $this->input->post('password')){
+        // reglas de validación
+            $username = $this->input->post('username');        
+            $password = md5($this->input->post('password'));
+            
+            $rol=$this->Login_Model->validar_rol($username,$password);
+            $id_usuario = $this->Login_Model->id_usuario($username, $password);
+            
+            //$this->session->set_userdata('id_usuario', $id_usuario);
+            
+            if ($rol=="administrador") {
+                redirect('roles/menu_admin');
+                
+            }else if ($rol=="cliente") {
+
+                redirect('roles/menu_cliente');
+
+            }else if ($rol=="bodeguero") {
+
+                redirect('roles/menu_bodeguero');
+                
+            }else if ($rol=="televendedor") {
+                
+                redirect('roles/menu_telventa'); 
+                
+            }
+    }else{                
+                
+                $this->load->view('login'); 
+            
+    }
+  }
 
 	public function estatus()
 	{
@@ -65,6 +85,3 @@ class Welcome extends CI_Controller {
         $this->load->view('our_template.php',$output);    
     }    
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

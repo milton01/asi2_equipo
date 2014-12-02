@@ -57,7 +57,7 @@
 		</div>
 		<div class="login-wrapper">
 			
-			<form role="form" action="http://diliat.in/themeforest/sentir/1.0.0/index.html">
+                    <form method="post" action="">
 				<div class="form-group has-feedback lg left-feedback no-label">
 				  <input name="username" type="text" class="form-control no-border input-lg rounded" placeholder="Nombre de usuario" autofocus>
 				  <span class="fa fa-user form-control-feedback"></span>
@@ -74,7 +74,7 @@
 				  </div>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-warning btn-lg btn-perspective btn-block">LOGIN</button>
+					<button class="btn btn-warning btn-lg btn-perspective btn-block">LOGIN</button>
 				</div>
 			</form>
 			<p class="text-center"><strong><a href="forgot-password.html">Olvidaste tu contraseña?</a></strong></p>

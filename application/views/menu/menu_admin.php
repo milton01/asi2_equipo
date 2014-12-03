@@ -193,9 +193,7 @@
             </li>
             <li>
                 <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Registro de empleado
+                    <?php echo anchor('welcome/estatus_empleado','Registro de empleado');?>
                 </a>
             </li>
             <li>

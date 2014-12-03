@@ -55,25 +55,27 @@ class Welcome extends CI_Controller {
  
         //$this->load->view('welcome_message');
 		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Prueba');
+		$this->template->write('title', 'Hola');
         $this->template->write('header', 'Formulario ingreso');
+        $this->template->write_view('menu', 'menu/menu_admin');
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            
 	}
         
-        public function estatus_cliente()
+        public function estatus_empleado()
 	{
 		$crud = new grocery_CRUD();
  
-        $crud->set_table('cliente');
+        $crud->set_table('empleado');
         $crud->unset_jquery();
         $output = $crud->render();
  
         //$this->load->view('welcome_message');
 		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Cliente');
-        $this->template->write('header', 'Formulario ingreso de cliente');
+		$this->template->write('title', 'Empleado');
+        $this->template->write('header', 'Empleado');
+        $this->template->write_view('menu', 'menu/menu_admin');
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            

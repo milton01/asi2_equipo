@@ -12,9 +12,10 @@
         <link href="<?=base_url()?>/css/style.default.css" rel="stylesheet">
         <link href="<?=base_url()?>/css/jquery.datatables.css" rel="stylesheet">
         <?php
+        if(isset($css_files)):
         foreach($css_files as $file): ?>
         <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-        <?php endforeach; ?>
+        <?php endforeach; endif;?>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js">
@@ -48,233 +49,7 @@
                     <h5 class="sidebartitle">
                     Menú
                     </h5>
-                    <ul class="nav nav-pills nav-stacked nav-bracket">
-                        <li class="active">
-                            <a href="index.html">
-                                <i class="fa fa-home">
-                                </i>
-                                <span>
-                                Inicio
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="usuarios.html">
-                                <i class="fa fa-user">
-                                </i>
-                                
-                                <span>
-                                Confirmacion de clientes
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="transportes.html">
-                                <i class="fa fa-truck">
-                                </i>
-                                
-                                <span>
-                                Carrito de compras
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="clientes.html">
-                                <i class="fa fa-suitcase">
-                                </i>
-                                <span>
-                                Ver pedidos
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="clientes.html">
-                                <i class="fa fa-suitcase">
-                                </i>
-                                <span>
-                                Registrar compras
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="clientes.html">
-                                <i class="fa fa-suitcase">
-                                </i>
-                                <span>
-                                Liquidacion de rutas
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Llenar transporte
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Agregar pedidos a la ruta
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Facturación de pedidos
-                                    </a>
-                                </li>
-                               
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Ventas directas
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Agregar pedido
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Facturación de pedido
-                                    </a>
-                                </li>
-                               
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Reportes
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Ventas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Compras
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Inventario
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Productos escasos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Estado crediticio
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Creditos otorgados
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Facturas pendientes
-                                    </a>
-                                </li>
-                               
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a href="tables.html">
-                                <i class="fa fa-th-list">
-                                </i>
-                                
-                                <span>
-                                Mantenimientos
-                                </span>
-                            </a>
-                            <ul class="children">
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Registro de cliente
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Registro de empleado
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Registro de proveedor
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Estados para tablas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#.html">
-                                        <i class="fa fa-caret-right">
-                                        </i>
-                                        Movimientos de inventario
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
+                    <?=$menu?>
                 </div>
                 <!-- leftpanelinner -->
             </div>
@@ -372,9 +147,9 @@
         <script src="<?=base_url()?>js/custom.js">
         </script>
         <!-- Grocery CRUD JS -->
-        <?php foreach($js_files as $file): ?>
+        <?php if(isset($js_files)) : foreach($js_files as $file): ?>
         <script src="<?php echo $file; ?>"></script>
-        <?php endforeach; ?>
+        <?php endforeach; endif;?>
         <!-- Custom js-->
         <?=$scripts?>
     </body>

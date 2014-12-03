@@ -60,6 +60,7 @@ $template['default']['template'] = 'master-layout';
 $template['default']['regions'] = array(
 	'title',
 	'header',
+	'menu',
 	'content',
 	'scripts'
 );

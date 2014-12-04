@@ -45,60 +45,153 @@ class Welcome extends CI_Controller {
     }
   }
 
+<<<<<<< HEAD
 
 	public function estatus()
+=======
+	public function mantto_cliente()
+>>>>>>> 0248121ffbefc3b40fa205d5b8f02f5a8cfa5842
 	{
-		$crud = new grocery_CRUD();
- 
+<<<<<<< HEAD
+	$crud = new grocery_CRUD();
+        
         $crud->set_table('estatus');
         $crud->unset_jquery();
         $output = $crud->render();
  
         //$this->load->view('welcome_message');
-		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Hola');
-        $this->template->write('header', 'Formulario ingreso');
+	$data['files'] = array('j1', 'j2', 'j3');
+	$this->template->write('title', 'Estados');
+        $this->template->write('header', 'Registros de Estados');
         $this->template->write_view('menu', 'menu/menu_admin');
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            
+=======
+                    $crud = new grocery_CRUD();
+
+            $crud->set_table('cliente');
+            $crud->unset_jquery();
+            $output = $crud->render();
+
+            //$this->load->view('welcome_message');
+                    $data['files'] = array('j1', 'j2', 'j3');
+                    $this->template->write('title', 'Cliente');
+            $this->template->write('header', 'Registro de cliente');
+            $this->template->write_view('menu', 'menu/menu_admin');
+            $this->template->write_view('content', 'test/primera', $output);
+            $this->template->write_view('scripts', 'master-scripts', $data );
+            $this->template->render();            
+>>>>>>> origin/master
 	}
         
-        public function estatus_empleado()
+        public function mantto_empleado()
 	{
-		$crud = new grocery_CRUD();
+                    $crud = new grocery_CRUD();
+
+            $crud->set_table('empleado');
+            $crud->unset_jquery();
+            $output = $crud->render();
+
+            //$this->load->view('welcome_message');
+                    $data['files'] = array('j1', 'j2', 'j3');
+                    $this->template->write('title', 'Empleado');
+            $this->template->write('header', 'Registro de empleado');
+            $this->template->write_view('menu', 'menu/menu_admin');
+            $this->template->write_view('content', 'test/primera', $output);
+            $this->template->write_view('scripts', 'master-scripts', $data );
+            $this->template->render();            
+	}
+
+
+	public function mantto_proveedor()
+	{
+                    $crud = new grocery_CRUD();
+
+            $crud->set_table('proveedor');
+            $output = $crud->render();
+
+            //$this->load->view('welcome_message');
+                    $data['files'] = array('j1', 'j2', 'j3');
+                    $this->template->write('title', 'Proveedor');
+            $this->template->write('header', 'Registro de proveedor');
+            $this->template->write_view('menu', 'menu/menu_admin');            
+            $this->template->write_view('content', 'test/primera', $output);
+            $this->template->write_view('scripts', 'master-scripts', $data );
+            $this->template->render();            
+            }
+        
+        public function mantto_estados()
+	{
+	$crud = new grocery_CRUD();
  
-        $crud->set_table('empleado');
-        $crud->unset_jquery();
+        $crud->set_table('estatus');
         $output = $crud->render();
  
         //$this->load->view('welcome_message');
-		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Empleado');
+<<<<<<< HEAD
+	$data['files'] = array('j1', 'j2', 'j3');
+	$this->template->write('title', 'Empleado');
         $this->template->write('header', 'Empleado');
         $this->template->write_view('menu', 'menu/menu_admin');
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            
 	}
-
-
-	public function registro_empleado()
+        
+        public function mantenimiento_empleado()
 	{
-		$crud = new grocery_CRUD();
+	$crud = new grocery_CRUD();
  
         $crud->set_table('empleado');
+        $crud->unset_jquery();
         $output = $crud->render();
  
         //$this->load->view('welcome_message');
+	$data['files'] = array('j1', 'j2', 'j3');
+	$this->template->write('title', 'Empleado');
+        $this->template->write('header', 'Empleado');
+        $this->template->write_view('menu', 'menu/menu_admin');
+=======
 		$data['files'] = array('j1', 'j2', 'j3');
-		$this->template->write('title', 'Empleado');
-        $this->template->write('header', 'Formulario Empleado');
+		$this->template->write('title', 'Estados');
+        $this->template->write('header', 'Registro de estados');
+        $this->template->write_view('menu', 'menu/menu_admin');        
+>>>>>>> origin/master
         $this->template->write_view('content', 'test/primera', $output);
         $this->template->write_view('scripts', 'master-scripts', $data );
         $this->template->render();            
 	}
+<<<<<<< HEAD
 
+	public function estatus_cliente()
+=======
+        
+        public function mantto_movimiento()
+>>>>>>> origin/master
+	{
+	$crud = new grocery_CRUD();
+ 
+        $crud->set_table('tipo_movimiento');
+        $output = $crud->render();
+ 
+        //$this->load->view('welcome_message');
+<<<<<<< HEAD
+	$data['files'] = array('j1', 'j2', 'j3');
+	$this->template->write('title', 'Empleado');
+        $this->template->write('header', 'Formulario Empleado');
+        $this->template->write_view('menu', 'menu/menu_admin');
+=======
+		$data['files'] = array('j1', 'j2', 'j3');
+		$this->template->write('title', 'Tipo movimiento');
+        $this->template->write('header', 'Registro de tipo movimiento');
+        $this->template->write_view('menu', 'menu/menu_admin');        
+>>>>>>> origin/master
+        $this->template->write_view('content', 'test/primera', $output);
+        $this->template->write_view('scripts', 'master-scripts', $data );
+        $this->template->render();            
+	}
+        
 	function _example_output($output = null)
  
     {

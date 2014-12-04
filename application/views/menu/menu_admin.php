@@ -186,15 +186,12 @@
             </span>
         </a>
         <ul class="children">
+<<<<<<< HEAD
             <li>
-                <a href="#">
-                    <?php echo anchor('welcome/estatus_cliente','Registro de cliente');?>
-                </a>
+                <?php echo anchor('welcome/estatus_cliente',' Registro de Cliente ');?>
             </li>
             <li>
-                <a href="#.html">
-                    <?php echo anchor('welcome/estatus_empleado','Registro de empleado');?>
-                </a>
+                <?php echo anchor('welcome/estatus_empleado','Registro de Empleado');?>
             </li>
             <li>
                 <a href="#.html">
@@ -216,6 +213,18 @@
                     </i>
                     Movimientos de inventario
                 </a>
+=======
+            <li> <?php echo anchor('welcome/mantto_cliente','Registro de cliente');?>  </li>
+            
+            <li> <?php echo anchor('welcome/mantto_empleado','Registro de empleado');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_proveedor','Registro de proveedor');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_estados','Registro de estados');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_movimiento','Registro de tipo movimientos');?> </li>
+                
+>>>>>>> origin/master
             </li>
         </ul>
     </li>

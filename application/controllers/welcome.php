@@ -45,6 +45,7 @@ class Welcome extends CI_Controller {
     }
   }
 
+
 	public function estatus()
 	{
 		$crud = new grocery_CRUD();

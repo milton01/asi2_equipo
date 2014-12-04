@@ -78,7 +78,7 @@
 				</div>
 			</form>
 			<p class="text-center"><strong><a href="forgot-password.html">Olvidaste tu contraseña?</a></strong></p>
-			<p class="text-center"><strong><a href="register.html">Crear nueva cuenta</a></strong></p>
+			<p class="text-center"><strong><a href="<?=anchor('welcome/registrar')?>">Crear nueva cuenta</a></strong></p>
 		</div><!-- /.login-wrapper -->
 		<!--
 		===========================================================

@@ -186,36 +186,16 @@
             </span>
         </a>
         <ul class="children">
-            <li>
-                <a href="#">
-                    <?php echo anchor('welcome/estatus_cliente','Registro de cliente');?>
-                </a>
-            </li>
-            <li>
-                <a href="#.html">
-                    <?php echo anchor('welcome/estatus_empleado','Registro de empleado');?>
-                </a>
-            </li>
-            <li>
-                <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Registro de proveedor
-                </a>
-            </li>
-            <li>
-                <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Estados para tablas
-                </a>
-            </li>
-            <li>
-                <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Movimientos de inventario
-                </a>
+            <li> <?php echo anchor('welcome/mantto_cliente','Registro de cliente');?>  </li>
+            
+            <li> <?php echo anchor('welcome/mantto_empleado','Registro de empleado');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_proveedor','Registro de proveedor');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_estados','Registro de estados');?> </li>
+            
+            <li> <?php echo anchor('welcome/mantto_movimiento','Registro de tipo movimientos');?> </li>
+                
             </li>
         </ul>
     </li>

@@ -187,14 +187,10 @@
         </a>
         <ul class="children">
             <li>
-                <a href="#">
-                    <?php echo anchor('welcome/estatus_cliente','Registro de cliente');?>
-                </a>
+                <?php echo anchor('welcome/estatus_cliente',' Registro de Cliente ');?>
             </li>
             <li>
-                <a href="#.html">
-                    <?php echo anchor('welcome/estatus_empleado','Registro de empleado');?>
-                </a>
+                <?php echo anchor('welcome/estatus_empleado','Registro de Empleado');?>
             </li>
             <li>
                 <a href="#.html">

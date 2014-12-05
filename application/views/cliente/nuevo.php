@@ -58,13 +58,20 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8  the-box">
-			<?php if(isset($estado_registro) && $estado_registro > 0): ?>
+				<?php if(isset($estado_registro) && $estado_registro > 0): ?>
 				<div class="alert alert-success fade in alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 					<strong>Excelente!</strong> Usuario registrado correctamente
 					<a href="<?=base_url()?>" class="alert-link">identificate aqu&iacute;.</a>
 				</div>
-			<?php endif; ?>
+				<?php endif; ?>
+				<?php if(isset($estado_registro) && $estado_registro <= 0): ?>
+				<div class="alert alert-danger fade in alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<strong>Error!</strong> Por favor intentalo de nuevo
+					
+				</div>
+				<?php endif;?>
 				<form id="nuevo_cliente" method="post" action="<?=base_url()?>cliente/registrar" class="form-horizontal" data-toggle="validator">
 					
 					<fieldset>
@@ -89,7 +96,7 @@
 							</div>
 						</div>
 						<!-- Text input-->
-						<div class="form-group">
+						<div class="form-group" data-grupo="natural">
 							<label class="col-md-4 control-label" for="dui">D.U.I</label>
 							<div class="col-md-6">
 								<input id="dui" name="dui" type="text" placeholder="documento unico de identificación" class="form-control input-md">
@@ -105,7 +112,7 @@
 							</div>
 						</div>
 						<!-- Text input-->
-						<div class="form-group">
+						<div class="form-group" data-grupo="juridica">
 							<label class="col-md-4 control-label" for="nombre_j">Razon Social</label>
 							<div class="col-md-8">
 								<input id="nombre_j" name="nombre_j" type="text" placeholder="nombre juridico" class="form-control input-md">
@@ -113,7 +120,7 @@
 							</div>
 						</div>
 						<!-- Text input-->
-						<div class="form-group">
+						<div class="form-group" data-grupo="natural">
 							<label class="col-md-4 control-label" for="nombre_c">Nombre Completo</label>
 							<div class="col-md-6">
 								<input id="nombre_c" name="nombre_c" type="text" placeholder="Juan José Perez Lopez" class="form-control input-md">

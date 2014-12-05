@@ -38,4 +38,11 @@ Cliente = {
 
 jQuery(document).ready(function($) {
 	Cliente.init();
+
+	$("div[data-grupo]").each( function(index, input) {
+		 var grupoInput = $(input).data("grupo");
+		 if(grupoInput == "natural") {
+		 	$(input).hide();
+		 }
+	});
 });

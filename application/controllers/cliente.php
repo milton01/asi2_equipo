@@ -19,6 +19,11 @@ class cliente extends CI_Controller {
 	{
 		
 	}
+        
+        public function olvido_password()
+	{
+            $this->load->view('cliente/forgot_password');
+	}
 
 	public function nuevo()
 	{

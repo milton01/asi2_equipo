@@ -62,7 +62,7 @@
 				<div class="alert alert-success fade in alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 					<strong>Excelente!</strong> Usuario registrado correctamente
-					<a href="#fakelink" class="alert-link">identificate aqu&iacute;.</a>
+					<a href="<?=base_url()?>" class="alert-link">identificate aqu&iacute;.</a>
 				</div>
 			<?php endif; ?>
 				<form id="nuevo_cliente" method="post" action="<?=base_url()?>cliente/registrar" class="form-horizontal" data-toggle="validator">

@@ -21,7 +21,7 @@ Cliente = {
 					required: true
 				},
 				correo: {
-					required: true
+					required: true,
 					email: true
 				}
 			}

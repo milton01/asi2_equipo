@@ -58,7 +58,7 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8  the-box">
-				<form method="post" action="<?=base_url()?>cliente/registrar" class="form-horizontal" data-toggle="validator">
+				<form id="nuevo_cliente" method="post" action="<?=base_url()?>cliente/registrar" class="form-horizontal" data-toggle="validator">
 				
 					<fieldset>
 						<!-- Form Name -->
@@ -259,6 +259,10 @@
 			<!-- EASY PIE CHART JS -->
 			<script src="<?=base_url()?>assets/plugins/easypie-chart/easypiechart.min.js"></script>
 			<script src="<?=base_url()?>assets/plugins/easypie-chart/jquery.easypiechart.min.js"></script>
+			<script src="<?=base_url()?>js/jquery.validate.js"></script>
+			<script src="<?=base_url()?>js/localization/messages_es.js"></script>
+			
+			<script src="<?=base_url()?>js/cliente_nuevo.js"></script>
 			
 			<!-- KNOB JS -->
 			<!--[if IE]>

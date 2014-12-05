@@ -132,6 +132,60 @@ class Welcome extends CI_Controller {
         $this->template->render();            
 	}
         
+    public function cambio_clave()
+    {
+	$crud = new grocery_CRUD();
+ 
+        $crud->set_table('usuario');
+        $crud->unset_jquery();
+        $output = $crud->render();
+ 
+	$data['files'] = array('j1', 'j2', 'j3');
+	$this->template->write('title', 'Cambio de password');
+        $this->template->write('header', 'Cambio de password');
+        $this->template->write_view('menu', 'menu/menu_admin');     
+        $this->template->write_view('content', 'test/primera', $output);
+        $this->template->write_view('scripts', 'master-scripts', $data );
+        $this->template->render();            
+	}
+        
+        public function cerrar_sesion()
+    
+	{       
+    if ($this->input->post('username') and $this->input->post('password')){
+        // reglas de validación
+            $username = $this->input->post('username');        
+            $password = md5($this->input->post('password'));
+            
+            $rol=$this->Login_Model->validar_rol($username,$password);
+            //$id_usuario = $this->Login_Model->id_usuario($username, $password);
+            
+            //$this->session->set_userdata('id_usuario', $id_usuario);
+            
+            if ($rol=="administrador") {
+                redirect('roles/menu_admin');
+                
+            }else if ($rol=="cliente") {
+
+                redirect('roles/menu_cliente');
+
+            }else if ($rol=="bodeguero") {
+
+                redirect('roles/menu_bodeguero');
+                
+            }else if ($rol=="televendedor") {
+                
+                redirect('roles/menu_telventa'); 
+                
+            }
+    }else{                
+                
+                $this->load->view('login'); 
+            
+    }
+    
+    }
+        
 	function _example_output($output = null)
  
     {

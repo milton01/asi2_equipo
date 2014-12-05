@@ -76,21 +76,10 @@
                                     </span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                                        <li>
-                                            <a href="#">
-                                                <i class="glyphicon glyphicon-cog">
-                                                </i>
-                                                Cambiar password
-                                            </a>
-                                        </li>
                                         
-                                        <li>
-                                            <a href="signin.html">
-                                                <i class="glyphicon glyphicon-log-out">
-                                                </i>
-                                                Cerrar sesión
-                                            </a>
-                                        </li>
+                                        <li><?php echo anchor('welcome/cambio_clave','Cambiar mi clave');?>  </li>
+                                        <li><?php echo anchor('welcome/cerrar_sesion','Cerrar sessi&oacuten');?>  </li>
+                                        
                                     </ul>
                                 </div>
                             </li>

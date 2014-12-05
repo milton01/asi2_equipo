@@ -25,9 +25,11 @@ class cliente extends CI_Controller {
             $this->load->view('cliente/forgot_password');
 	}
 
-	public function nuevo()
+	public function nuevo($estado = null)
 	{
-		$this->load->view('cliente/nuevo');
+
+		$data['estado_registro'] = $estado;
+		$this->load->view('cliente/nuevo', $data);
 	}
 
 	public function registrar()
@@ -37,12 +39,10 @@ class cliente extends CI_Controller {
 
 			// Asignar valores a las propiedades de la clase Usuario__model para acceso de datos
 			$this->usuario->nombre = $this->input->post( 'nombre' ); // 
-			$this->usuario->password = $this->input->post( 'password' ); // 
+			$this->usuario->password = md5( $this->input->post( 'password' ) ); // 
 			$this->usuario->tipo = $this->input->post( 'tipo' ); // 
-			print_r('<pre>');
-			print_r($this->usuario);
 			// Insertar
-			//$resultado = (int)$this->usuario->insertar();
+			$usuario_id = (int)$this->usuario->insertar();
 			//
 			// Asignar valores a las propiedades de la clase Cliente__model para acceso de datos
 			$this->cliente->nit = $this->input->post( 'nit' ); // 
@@ -65,12 +65,11 @@ class cliente extends CI_Controller {
 			$this->cliente->statu_cred = $this->input->post( 'statu_cred' ); // 
 			$this->cliente->ruta_id = $this->input->post( 'ruta_id' ); // 
 			$this->cliente->status_id = $this->input->post( 'status_id' ); // 
-			$this->cliente->usuario_id = $this->input->post( 'usuario_id' ); // 
-
-			print_r($this->cliente);
-			print_r('</pre>');
+			$this->cliente->usuario_id = (int)$usuario_id; 
+			
 			// Insertar
-			//$resultado = (int)$this->cliente->insertar();
+			$resultado = (int)$this->cliente->insertar();
+			redirect('cliente/nuevo/'.$resultado, 'refresh');
 		}
 	}
 

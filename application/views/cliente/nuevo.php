@@ -58,8 +58,15 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8  the-box">
+			<?php if(isset($estado_registro) && $estado_registro > 0): ?>
+				<div class="alert alert-success fade in alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<strong>Excelente!</strong> Usuario registrado correctamente
+					<a href="#fakelink" class="alert-link">identificate aqu&iacute;.</a>
+				</div>
+			<?php endif; ?>
 				<form id="nuevo_cliente" method="post" action="<?=base_url()?>cliente/registrar" class="form-horizontal" data-toggle="validator">
-				
+					
 					<fieldset>
 						<!-- Form Name -->
 						<legend>Nuevo Cliente</legend>
@@ -210,10 +217,9 @@
 							</div>
 						</div>
 					</fieldset>
-
 					<input type="hidden" name="tipo" id="tipo" value="cliente">
-				
-			</form>
+					
+				</form>
 			</div>
 			<div class="col-sm-2"></div>
 			

@@ -19,6 +19,10 @@ Cliente = {
 				password2: {
 					equalTo: "#password",
 					required: true
+				},
+				correo: {
+					required: true
+					email: true
 				}
 			}
 

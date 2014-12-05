@@ -26,12 +26,7 @@ function validar_rol($username, $password)
     $this->db->where('nombre', $username);
     $this->db->where('password', $password);
     $query = $this->db->get();
-    /*$this->db->where('nombre', $username);
-    $this->db->where('password', $password);  
-    $query = $this->db->get('usuario')->result();
-    foreach ($query as $query){
-        $rol = $query->tipo;
-    }*/
+    
     $row = $query->row();
     return $row->tipo;
 }
@@ -43,12 +38,7 @@ function id_usuario($username, $password)
     $this->db->where('nombre', $username);
     $this->db->where('password', $password);
     $query = $this->db->get();
-    /*$this->db->where('nombre', $username);
-    $this->db->where('password', $password);  
-    $query = $this->db->get('usuario')->result();
-    foreach ($query as $query){	  	
-        $id = $query->id;			 
-    }*/
+    
     $row = $query->row();
     return $row->id;
 }

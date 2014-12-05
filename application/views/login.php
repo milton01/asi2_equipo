@@ -67,18 +67,14 @@
 				  <span class="fa fa-unlock-alt form-control-feedback"></span>
 				</div>
 				<div class="form-group">
-				  <div class="checkbox">
-					<label>
-					  <input type="checkbox" class="i-yellow-flat"> Recuerdame
-					</label>
-				  </div>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-warning btn-lg btn-perspective btn-block">LOGIN</button>
 				</div>
 			</form>
-			<p class="text-center"><strong><a href="forgot-password.html">Olvidaste tu contraseña?</a></strong></p>
-			<p class="text-center"><strong><a href="<?=anchor('welcome/registrar')?>">Crear nueva cuenta</a></strong></p>
+                        
+                        <p class="text-center"><?php echo anchor('cliente/olvido_password','¿Olvido su contraseña?')?></p>
+			<p class="text-center"><?php echo anchor('cliente/nuevo','Crear nueva cuenta')?></p>
 		</div><!-- /.login-wrapper -->
 		<!--
 		===========================================================

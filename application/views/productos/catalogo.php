@@ -29,7 +29,7 @@
 						<input type="text" class="cantidad-producto form-control small cc_security_masking" style="width: 85px;">
 					</td>
 					<td>
-						<button class="btn btn-success agregar-producto" data-id="<?=$producto->producto_id?>" data-precio="<?=$producto->precio_venta?>">Agregar</button>
+						<button class="btn btn-success agregar-producto" data-id="<?=$producto->producto_id?>" data-precio="<?=$producto->precio_venta?>" data-producto="<?=$producto->leyenda_producto?>">Agregar</button>
 					</td>
 				</tr>
 			<?php endforeach; else: ?>
@@ -50,6 +50,7 @@
 					<th>Producto</th>
 					<th>Cantidad</th>
 					<th>Sub Total</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody id="productos-seleccionados">

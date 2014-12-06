@@ -220,7 +220,7 @@
 							<label class="col-md-4 control-label" for="guardar">Guardar</label>
 							<div class="col-md-8">
 								<button id="guardar" name="guardar" type="submit" class="btn btn-success">Registrar</button>
-								<button id="cancelar" name="cancelar" class="btn btn-danger">Cancelar</button>
+								<button id="cancelar" name="cancelar" type="reset" class="btn btn-danger">Cancelar</button>
 							</div>
 						</div>
 					</fieldset>

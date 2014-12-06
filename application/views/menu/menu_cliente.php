@@ -9,7 +9,7 @@
         </a>
     </li>
     <li>
-        <a href="transportes.html">
+        <a href="<?=base_url('productos')?>">
             <i class="fa fa-truck">
             </i>
             

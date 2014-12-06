@@ -23,17 +23,17 @@
         $btn_estado="null";
         foreach ($query->result() as $row)
         {
-            if (!$row->pd_monto) $btn_estado = " disabled";
+            //if (!$row->monto_pedido) $btn_estado = " disabled";
             echo '<tr>
                     <td>'.$j.'</td>
-                    <td>'.$row->cl_id.'</td>
-                    <td>'.$row->cl_nombre.'</td>
-                    <td>'.$row->pd_id.'</td>
-                    <td>$ '.$row->pd_monto.'</td>
-                    <td>'.$row->pd_status.'</td>                
+                    <td>'.$row->cliente_id.'</td>
+                    <td>'.$row->nombre_c.'</td>
+                    <td>'.$row->id.'</td>
+                    <td>$ '.$row->monto_pedido.'</td>
+                    <td>'.$row->estado.'</td>                
                     <td>
-                        '.anchor('pedido/despachar/'.$row->pd_id, 'Detalle', 'title="Despachar pedido" class="btn btn-success btn-sm"'.$btn_estado).'
-                        '.anchor('pedido/rechazar/'.$row->pd_id, 'Rechazar', 'title="Rechazar pedido" class="btn btn-danger btn-sm"').'
+                        '.anchor('pedido/despachar/'.$row->id, 'Detalle', 'title="Despachar pedido" class="btn btn-success btn-sm"'.$btn_estado).'
+                        '.anchor('pedido/rechazar/'.$row->id, 'Rechazar', 'title="Rechazar pedido" class="btn btn-danger btn-sm"').'
                     </td>
                 </tr>';
             $j=1;

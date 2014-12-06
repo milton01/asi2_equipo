@@ -124,21 +124,11 @@ class Pedido_model extends CI_Model{
 
     function listar_pedidos(){
         //Define el arreglo con parametros escapados para la query
-        $data = array();
-        $data[] = 1; //Define el estado pendiente
-        
-        //Query directa            
-        $query = $this->db->query("SELECT 
-                                    pd.id AS pd_id,
-                                    cl.cliente_id AS cl_id,
-                                    cl.nombre_c AS cl_nombre,
-                                    (select SUM(dp.cantidad * pr.preciov) from detalle_pedido dp natural join producto pr where dp.pedido_id = pd.id) as pd_monto,
-                                    (select st.descripcion from estatus st WHERE st.id = pd.status_id) AS pd_status
-                                  FROM 
-                                    pedido pd INNER JOIN cliente cl ON pd.cliente_id=cl.cliente_id
-                                  WHERE pd.status_id = ?;", $data);
-        //Devolvemos al controlador los datos
-        if ($query->num_rows() > 0) return $query; 
+        $this->db->where('estado_pedido', 1);
+        $resultado = $this->db->get('vw_pedido_pendiente');
+        return ( is_object( $resultado ) && $resultado->num_rows() > 0 )
+        ? $resultado
+        : null;
     }
     
     function listar_detalle_pedido($pd_id){

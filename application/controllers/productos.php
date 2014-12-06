@@ -2,14 +2,18 @@
 
 class productos extends CI_Controller {
 
+	private $carrito;
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model( 'carrito_model' ); 
+		$this->carrito = $this->carrito_model;
 	}
 
 	public function index()
 	{
-		$data['codigo_producto'] = 1111;
+		$data[ 'productos' ] = $this->carrito->mostrar();
+		$data['files'] = array('productos.js');
 		$this->template->write('title', 'Productos');
         $this->template->write('header', 'Catalogo De Productos');
         $this->template->write_view('menu', 'menu/menu_cliente');

@@ -7,14 +7,55 @@
 					<th>Producto</th>
 					<th>Marca</th>
 					<th>Precio</th>
-					<th>Canasta</th>
+					<th>Cantidad</th>
 				</tr>
 			</thead>
 			<tbody>
-				<td>
-					<a href="<?=base_url('productos/agregar/'.$codigo_producto)?>"><span class="label label-success">Agregar</span></a></td>
+			<?php if( isset( $productos ) ): foreach ( $productos->result() as $producto): ?>
+				<tr>
+					<td>
+						<?=$producto->producto_id?>
+					</td>
+					<td>
+					<?=$producto->leyenda_producto?>	
+					</td>
+					<td>
+						<?=$producto->marca?>
+					</td>
+					<td>
+						<?=number_format($producto->precio_venta,1,".",",")?>
+					</td>
+					<td>
+						<input type="text" class="cantidad-producto form-control small cc_security_masking" style="width: 85px;">
+					</td>
+					<td>
+						<button class="btn btn-success agregar-producto" data-id="<?=$producto->producto_id?>" data-precio="<?=$producto->precio_venta?>">Agregar</button>
+					</td>
 				</tr>
+			<?php endforeach; else: ?>
+				<tr>
+					<td>No Data to Display</td>
+				</tr>
+			<?php endif;?>
 			</tbody>
 		</table>
-		</div><!-- /.table-responsive -->
+	</div><!-- /.table-responsive -->
+</div>
+
+<div class="the-box full">
+	<div class="table-responsive">
+		<table class="table table-success">
+			<thead>
+				<tr>
+					<th>Producto</th>
+					<th>Cantidad</th>
+					<th>Sub Total</th>
+				</tr>
+			</thead>
+			<tbody id="productos-seleccionados">
+				
+			</tbody>
+		</table>
 	</div>
+</div>
+

@@ -1,7 +1,115 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Pedido_model extends CI_Model{
-    
+    public $id;
+    public $fecha_v;
+    public $fecha_p;
+    public $forma_pago;
+    public $docto;
+    public $motivo_r;
+    public $status_id;
+    public $cliente_id;
+    public $docto_id;
+    public function __construct()
+    {
+        parent::__construct();
+        //Inicializar Propiedades
+        $this->id = new stdClass(); // 
+        $this->fecha_v = new stdClass(); // 
+        $this->fecha_p = new stdClass(); // 
+        $this->forma_pago = new stdClass(); // 
+        $this->docto = new stdClass(); // 
+        $this->motivo_r = new stdClass(); // 
+        $this->status_id = new stdClass(); // 
+        $this->cliente_id = new stdClass(); // 
+        $this->docto_id = new stdClass(); // 
+    }
+    /**
+     * Metodo Insertar
+     * @return int ID ultimo registro ingresado
+     */
+    public function insertar()
+    {
+        $data = array(
+            'fecha_v' => $this->fecha_v,
+            'fecha_p' => $this->fecha_p,
+            'forma_pago' => $this->forma_pago,
+            'docto' => $this->docto,
+            'motivo_r' => $this->motivo_r,
+            'status_id' => $this->status_id,
+            'cliente_id' => $this->cliente_id,
+            'docto_id' => $this->docto_id
+            );
+
+        $this->db->insert( 'pedido', $data );
+
+        return (int)$this->db->insert_id();
+    }
+
+    /**
+     * Metodo Actualizar
+     * @return boolean resultado de la operacion
+     */
+    public function actualizar()
+    {
+        if ( is_object( $this->id ) || is_null( $this->id ) || empty( $this->id ) )
+        {
+            trigger_error('La propiedad id no ha sido definida');
+            exit();
+        }
+
+        $data = array(
+            'fecha_v' => $this->fecha_v,
+            'fecha_p' => $this->fecha_p,
+            'forma_pago' => $this->forma_pago,
+            'docto' => $this->docto,
+            'motivo_r' => $this->motivo_r,
+            'status_id' => $this->status_id,
+            'cliente_id' => $this->cliente_id,
+            'docto_id' => $this->docto_id
+            );
+
+        $this->db->where( 'id', $this->id );
+ 
+        $resultado = $this->db->update( 'pedido', $data );
+
+        return (boolean)$resultado;
+    }
+
+    /**
+     * Metodo Eliminar
+     * @return boolean resultado de la operacion
+     */
+    public function eliminar_pedido()
+    {
+        if ( is_object( $this->id ) || is_null( $this->id ) || empty( $this->id ) )
+        {
+            trigger_error('La propiedad id no ha sido definida');
+            exit();
+        }
+
+        $this->db->where( 'id', $this->id );
+ 
+        $resultado = $this->db->delete( 'pedido' );
+
+        return (boolean)$resultado;
+    }
+
+    /**
+     * Metodo buscar
+     * @return object Registros Almacenados
+     */
+    public function buscar()
+    {
+        if ( isset( $this->id ) && !is_object( $this->id ) ) {
+            $this->db->where( 'id', $this->id );
+        }
+ 
+        $resultado = $this->db->get( 'pedido' );
+
+        return ( is_object( $resultado ) && $resultado->num_rows() > 0 ) ? $resultado : false;
+    }
+
     /* Funciones de inicializacion */
     
     function tiempo_ahora(){

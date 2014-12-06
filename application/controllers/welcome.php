@@ -18,9 +18,9 @@ class Welcome extends CI_Controller {
             $password = md5($this->input->post('password'));
             
             $rol=$this->Login_Model->validar_rol($username,$password);
-            //$id_usuario = $this->Login_Model->id_usuario($username, $password);
+            $id_usuario = $this->Login_Model->id_usuario($username, $password);
             
-            //$this->session->set_userdata('id_usuario', $id_usuario);
+            $this->session->set_userdata('id_usuario', $id_usuario);
             
             if ($rol=="administrador") {
                 redirect('roles/menu_admin');

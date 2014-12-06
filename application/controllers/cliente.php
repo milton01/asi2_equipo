@@ -62,9 +62,9 @@ class cliente extends CI_Controller {
 			$this->cliente->direccion    = $this->input->post( 'direccion' ); // 
 			$this->cliente->municipio    = $this->input->post( 'municipio' ); // 
 			$this->cliente->departamento = $this->input->post( 'departamento' ); // 
-			$this->cliente->statu_cred   = $this->input->post( 'statu_cred' ); // 
-			$this->cliente->ruta_id      = $this->input->post( 'ruta_id' ); // 
-			$this->cliente->status_id    = $this->input->post( 'status_id' ); // 
+			$this->cliente->statu_cred   = 0;
+			$this->cliente->ruta_id      = 9011; // 
+			$this->cliente->status_id    = 1;
 			$this->cliente->usuario_id   = (int)$usuario_id; 
 			
 			// Insertar

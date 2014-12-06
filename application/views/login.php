@@ -60,11 +60,9 @@
                     <form method="post" action="">
 				<div class="form-group has-feedback lg left-feedback no-label">
 				  <input name="username" type="text" class="form-control no-border input-lg rounded" placeholder="Nombre de usuario" autofocus>
-				  <span class="fa fa-user form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback lg left-feedback no-label">
 				  <input name="password" type="password" class="form-control no-border input-lg rounded" placeholder="Contraseña">
-				  <span class="fa fa-unlock-alt form-control-feedback"></span>
 				</div>
 				<div class="form-group">
 				</div>

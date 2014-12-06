@@ -36,7 +36,7 @@
                     </td>
                 </tr>';
             $j=1;
-            $total += (int)$row->precio; 
+            $total += $row->precio; 
         }
     }
 ?>

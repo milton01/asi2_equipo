@@ -20,11 +20,7 @@
         </a>
         <ul class="children">
             <li>
-                <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Agregar pedidos a la ruta
-                </a>
+                <?php echo anchor('ruta','<i class="fa fa-caret-right"></i>Agregar pedidos a la ruta');?>
             </li>
             <li>
                 <a href="#.html">

@@ -29,13 +29,7 @@
         </a>
     </li>
     <li>
-        <a href="clientes.html">
-            <i class="fa fa-suitcase">
-            </i>
-            <span>
-            Ver pedidos
-            </span>
-        </a>
+        <?php echo anchor('pedido','<i class="fa fa-suitcase"></i><span>Ver pedidos</span>');?>
     </li>
     <li>
         <a href="clientes.html">
@@ -65,12 +59,8 @@
             </span>
         </a>
         <ul class="children">
-            <li>
-                <a href="#.html">
-                    <i class="fa fa-caret-right">
-                    </i>
-                    Agregar pedidos a la ruta
-                </a>
+            <li>                
+                <?php echo anchor('ruta','<i class="fa fa-caret-right"></i>Agregar pedidos a la ruta');?>                                    
             </li>
             <li>
                 <a href="#.html">

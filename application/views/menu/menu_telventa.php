@@ -27,13 +27,7 @@
         </a>
     </li>
     <li>
-        <a href="clientes.html">
-            <i class="fa fa-suitcase">
-            </i>
-            <span>
-            Ver pedidos
-            </span>
-        </a>
+        <?php echo anchor('pedido','<i class="fa fa-suitcase"></i><span>Ver pedidos</span>');?>
     </li>
     <li class="nav-parent">
         <a href="tables.html">

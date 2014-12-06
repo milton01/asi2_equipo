@@ -72,7 +72,6 @@ class cliente extends CI_Controller {
 			redirect('cliente/nuevo/'.$resultado, 'refresh');
 		}
 	}
-
 }
 
 /* End of file acceso.php */

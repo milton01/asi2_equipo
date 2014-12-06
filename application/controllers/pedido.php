@@ -13,7 +13,11 @@ class pedido extends CI_Controller {
     
     /* Funciones de consulta de datos */
     
-    public function index() {        
+    public function index() { 
+        
+        // page info here, db calls, etc.     
+        
+          
         //Se ejecuta la consulta
         $query = $this->pedido_model->listar_pedidos();
 
@@ -130,7 +134,25 @@ class pedido extends CI_Controller {
             //Actualiza el estado del pedido a no despachado
             $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 3);
             $this->db->trans_complete();
-            
+            //Se ejecuta la consulta
+        $query_productos = $this->pedido_model->listar_detalle_pedido($pd_id);
+        
+        //Consultas de encabezado
+        $query_pedido = $this->pedido_model->mostrar_pedido($pd_id);
+        //Se extran los valores de la consulta
+        $row_pedido = $query_pedido->row();        
+        //Consultas de encabezado
+        $query_cliente = $this->pedido_model->mostrar_cliente($row_pedido->cliente_id);
+        //Se extran los valores de la consulta
+        $row_cliente = $query_cliente->row();
+        
+        //Se preparan los parametros de la vista        
+            $data['row_pedido'] = $row_pedido;
+            $data['row_cliente'] = $row_cliente;
+            $data['query_productos'] = $query_productos;
+            $this->load->helper(array('dompdf', 'file'));
+            $html = $this->load->view('pedido/despachar_pdf', $data, true);
+            pdf_create($html, 'filename');
             //Retorna a principal con cambios guardados
             redirect('pedido');
             
